@@ -1,0 +1,361 @@
+
+
+/* :root används för att skapa CSS-variabler som kan användas överallt */
+:root {
+  --primary: #1565c0;        /* Huvudfärg (blå) */
+  --primary-dark: #0d47a1;   /* Mörkare version av huvudfärgen */
+  --bg: #f2f5f8;             /* Bakgrundsfärg */
+  --card: #ffffff;           /* Kortens bakgrund (vit) */
+  --text: #111;              /* Standard textfärg */
+  --muted: #6b7280;          /* Ljusare/grå text */
+  --success: #2e7d32;        /* Grön (inkomster) */
+  --danger: #c62828;         /* Röd (utgifter) */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* 
+   NAVIGATION
+ */
+
+.top-nav {
+  background: var(--primary);
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.nav-links .aktiv {
+  background: rgba(255,255,255,0.25);
+}
+
+.nav-links .cta {
+  background: white;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* 
+   HERO (HEM-SIDAN)
+ */
+
+.hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 120px 80px;
+  color: white;
+}
+
+.hero-content {
+  max-width: 550px;
+}
+
+.hero-content h1 {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* 
+   HERO-KORT (saldo preview)
+ */
+
+.hero-card {
+  background: var(--card);
+  color: var(--text);
+  padding: 30px;
+  border-radius: 25px;
+  width: 320px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+}
+
+.hero-card h2 {
+  margin: 10px 0 20px;
+  font-size: 28px;
+}
+
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.income {
+  color: var(--success);
+}
+
+.expense {
+  color: var(--danger);
+}
+
+/* 
+   CONTAINER (BUDGET-SIDAN)
+ */
+
+.container {
+  max-width: 900px;
+  margin: 60px auto;
+  background: var(--card);
+  padding: 50px;
+  border-radius: 30px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+h1 {
+  font-size: 42px;
+  margin-top: 0;
+}
+
+h2 {
+  margin-top: 40px;
+  font-size: 24px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* 
+   FORMULÄR
+ */
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  border-radius: 15px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+/* 
+   KNAPPAR
+ */
+
+button,
+.primary-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  width: 100%;
+  margin-top: 15px;
+}
+
+button:hover,
+.primary-btn:hover {
+  background: var(--primary-dark);
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+/* 
+   TRANSAKTIONSLISTA
+ */
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f7f9fb;
+  padding: 16px;
+  border-radius: 16px;
+  margin-bottom: 12px;
+}
+
+.inline-form {
+  display: inline;
+}
+
+button.danger {
+  background: var(--primary);
+  width: auto;
+  padding: 8px 16px;
+  border-radius: 12px;
+}
+
+button.danger:hover {
+  background: var(--primary-dark);
+}
+
+
+.summary {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 40px 0;
+}
+
+/* 
+   DIAGRAM
+ */
+
+canvas {
+  margin-top: 30px;
+}
+
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    padding: 80px 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 44px;
+  }
+
+  .hero-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 30px 15px;
+    padding: 30px;
+  }
+
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+}
+
+.reward-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.4s ease;
+}
+
+.reward-box {
+  background: white;
+  padding: 60px 70px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+  animation: popUp 0.4s ease;
+  position: relative;
+}
+
+.reward-box::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #ffcc00, #ff9800);
+  filter: blur(20px);
+  z-index: -1;
+}
+
+.reward-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes popUp {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes bounce {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-10px); }
+}
